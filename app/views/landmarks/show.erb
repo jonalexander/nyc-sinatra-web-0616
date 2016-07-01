@@ -8,3 +8,11 @@
     <td><%= @landmark.year_completed %></td>
   </tr>
 <table>
+
+<!--
+  get '/landmarks/:id' do 
+    #binding.pry
+    @landmark = Landmark.find_by_id(params[:id])
+    erb :'/landmarks/show'
+  end
+-->

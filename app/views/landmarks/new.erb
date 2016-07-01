@@ -1,0 +1,31 @@
+<!-- 
+
+landmarks belong to figures
+
+landmark - name, year
+
+select which figure to associate to
+
+-->
+
+<h2>Add New Landmark</h2>
+<form action="/landmarks" method="POST">
+
+ <label>Name: </label>
+ <input id="landmark_name" type="text" name="landmark[name]">
+ <label>Year Completed:</label>
+ <input type="number" id="landmark_year_completed" name="landmark[year_completed]"></input>
+ <br><br>
+
+ <!-- Figures Checkboxes -->
+ <h3>Choose a Figures:</h3>
+ <% Figure.all.each do |figure| %>
+ <input type="radio" name="landmark[figure_ids][]" value="<%= figure.id %>" id="figure_<%= figure.id %>">
+  <%= figure.name %>
+ </input>
+
+ <% end %>
+ <br><br>
+ <input type="submit" value="Create New Landmark">
+</form>
+

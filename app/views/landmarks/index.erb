@@ -1,0 +1,21 @@
+<h2>Landmarks</h2>
+
+<table>
+ <% @landmarks.each do |landmark| %>
+  <tr>
+   <td> 
+    <a href="/landmarks/<%= landmark.id %>"> <%= landmark.name %></a> <%= landmark.year_completed %>
+   </td>
+  </tr>
+  <% end %>
+ </table>
+
+ <p> <a href="/landmarks/new">Create New Landmark</a> </p>
+
+<!--
+   #index
+  get '/landmarks' do 
+    @landmarks = Landmark.all
+    erb :'/landmarks/index'
+  end
+-->
